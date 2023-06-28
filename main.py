@@ -3,7 +3,7 @@ date = "02.01.0001"
 
 days = {
     1:"Monday", 2:"Tuesday", 3:"Wednesday", 4:"Thursday", 5:"Friday",
-    6:"Saturday", 7:"Sunday"
+    6:"Saturday", 0:"Sunday"
 }
 
 months = {
@@ -24,3 +24,12 @@ def diff(date):
 #for i in date:
     #d,m,y = diff(i)
     #print(d,m,y)
+
+d,m,y = diff("02.01.0001")
+
+def assig(d):
+    a = d%7 
+    print(a)
+
+for i in range(1,32):
+    assig(i)
