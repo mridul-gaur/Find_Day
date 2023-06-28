@@ -25,11 +25,15 @@ def diff(date):
     #d,m,y = diff(i)
     #print(d,m,y)
 
-d,m,y = diff("02.01.0001")
+d,m,y = diff(date)
 
 def assig(d):
     a = d%7 
-    print(a)
+    return a
 
-for i in range(1,32):
-    assig(i)
+#for i in range(1,32):
+    #assig(i)
+final = assig(d)
+
+
+print("The day on",date,"is",days[final])
