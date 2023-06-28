@@ -2,8 +2,8 @@ start_date = "01.01.0001" #Saturday
 date = "02.01.0001"
 
 days = {
-    1:"Monday     -1", 2:"Tuesday    -2", 3:"Wednesday  -3", 4:"Thursday   -4",
-    5:"Friday     -5", 6:"Saturday   -6", 0:"Sunday     -0"
+    2:"Monday     -1", 3:"Tuesday    -2", 4:"Wednesday  -3", 5:"Thursday   -4",
+    6:"Friday     -5", 0:"Saturday   -6", 1:"Sunday     -0"
 }
 
 months = {
@@ -34,18 +34,26 @@ final = assig(d,m)
 
 def test():
     dates = []
-    for j in range(1,2):
+    for j in range(1,2024):
         string = ""
         if j < 10:
             str_j = "000"+str(j)
-        else:
+        elif j < 100:
             str_j = "00"+str(j)
-        for k in range(1,2):
+        elif j < 1000:
+            str_j = "0"+str(j)
+        else:
+            str_j = str(j)
+        for k in range(1,13):
             if k < 10:
                 str_k = "0"+str(k)
             else:
                 str_k = str(k)
-            for l in range(1,32):
+            if j%4 == 0:
+                months[2] = 29
+            else:
+                months[2] = 28
+            for l in range(1,(months[k])+1):
                 if l < 10:
                     str_l = "0"+str(l)
                 else:
@@ -53,10 +61,13 @@ def test():
                 string = str_l + "." + str_k + "." + str_j
                 dates.append(string)
 #    print(dates)
+    q = 1
     for i in dates:
-        d,m,y = diff(i)
-        final = assig(d,m)
-        print("The day on",i,"is",days[final])
+        #d,m,y = diff(i)
+        #final = assig(d,m)
+        print("The day on",i,"is",days[q])
+        q = q+1
+        q = q%7
 
 test()
 #print("The day on",date,"is",days[final])
