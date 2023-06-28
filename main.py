@@ -19,4 +19,8 @@ def diff(date):
     y = 1 + year
     return d,m,y
 
+date = ["01.01.0001","02.01.0001","01.02.0001","01.01.0002"]
 
+for i in date:
+    d,m,y = diff(i)
+    print(d,m,y)
